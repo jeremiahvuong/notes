@@ -1,0 +1,18 @@
+\ProvidesPackage{derivatives}
+
+\RequirePackage[ISO]{diffcoeff}
+
+% Define derivative commands
+\difdef{f}{}{outer-Ldelim=\left., outer-Rdelim=\right|, sub-nudge=0mu}
+\difdef{f}{p}{op-symbol=\partial, outer-Ldelim=\left., outer-Rdelim=\right|, sub-nudge=0mu}
+\RenewDocumentCommand\diffp{}{\diff.p.}
+
+% Define additional derivative commands
+\difdef{l}{delta}{op-symbol=\Delta}
+\difdef{l}{p}{op-symbol=\partial}
+\difdef{l}{0}{outer-Ldelim=}
+\newcommand{\dd}{\dl}
+\WithSuffix\newcommand\dd*{\dl.0.}  % derivative d without any prior space (to be used by itself with inline text)
+\newcommand{\ddel}{\dl.delta.}
+\newcommand{\ddp}{\dl.p.}
+\newcommand{\pdd}{\dl.p.}  % alias for \ddp 
